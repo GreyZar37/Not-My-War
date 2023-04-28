@@ -72,19 +72,19 @@ public class MovementScript : MonoBehaviour
 
         rb2D.velocity = movement;
         controls();
-        anim.SetFloat("Velocity", Mathf.Abs(movement.x + movement.y));
+        anim.SetFloat("Velocity", Mathf.Abs(movement.x) + Mathf.Abs (movement.y));
     }
 
     void flip()
     {
         if(horizontal > 0)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
 
         }
         else if(horizontal < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
 
         }
     }

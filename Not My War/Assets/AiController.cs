@@ -54,6 +54,7 @@ public class AiController : MonoBehaviour
     }
     public void chasingState()
     {
+        aiControl.maxSpeed = 2.5f;
         if (aiControl.reachedDestination)
         {
             print("Caugth");
@@ -66,6 +67,7 @@ public class AiController : MonoBehaviour
     }
     public void patrollingState()
     {
+        aiControl.maxSpeed = 1;
         if (aiControl.reachedDestination)
         {
             destenation.target = patrolDestinations[Random.Range(0, patrolDestinations.Length)];
