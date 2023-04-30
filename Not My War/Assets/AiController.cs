@@ -59,10 +59,12 @@ public class AiController : MonoBehaviour
         {
             print("Caugth");
         }
-        else if(aiControl.endReachedDistance > spotRadius * 1.20f)
+        
+        if(aiControl.remainingDistance > spotRadius * 1.20f)
         {
-            state = aiState.patrolling;
             destenation.target = patrolDestinations[Random.Range(0, patrolDestinations.Length)];
+            state = aiState.patrolling;
+
         }
     }
     public void patrollingState()
